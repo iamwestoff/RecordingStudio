@@ -185,9 +185,8 @@ GameObject:
   - component: {fileID: 8668452034595262360}
   - component: {fileID: 8668452034595262364}
   - component: {fileID: 8668452034595262363}
-  - component: {fileID: 8668452034595262361}
   m_Layer: 0
-  m_Name: simpleGrabCupMesh
+  m_Name: DrumStickMesh
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -257,20 +256,6 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8668452034595262375}
-  m_Mesh: {fileID: -2432090755550338912, guid: d441f9cc9c843194a8662db856f0a8ae, type: 3}
---- !u!64 &8668452034595262361
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8668452034595262375}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 1
-  m_CookingOptions: 30
   m_Mesh: {fileID: -2432090755550338912, guid: d441f9cc9c843194a8662db856f0a8ae, type: 3}
 --- !u!1 &8668452035117209336
 GameObject:
@@ -585,9 +570,10 @@ GameObject:
   - component: {fileID: 8668452035740487425}
   - component: {fileID: 8668452035740487424}
   - component: {fileID: 8668452035740487439}
+  - component: {fileID: 1191361516}
   m_Layer: 0
   m_Name: DrumStick
-  m_TagString: Untagged
+  m_TagString: DrumStick
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -703,3 +689,17 @@ MonoBehaviour:
   _whenCancel:
     m_PersistentCalls:
       m_Calls: []
+--- !u!64 &1191361516
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8668452035740487438}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -2432090755550338912, guid: d441f9cc9c843194a8662db856f0a8ae, type: 3}
