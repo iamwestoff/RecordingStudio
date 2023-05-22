@@ -79,7 +79,7 @@ Material:
     m_Ints: []
     m_Floats:
     - _BumpScale: 1
-    - _Bumpiness: 0.055
+    - _Bumpiness: 0
     - _Cutoff: 0.5
     - _DetailNormalMapScale: 1
     - _DstBlend: 0
@@ -87,21 +87,21 @@ Material:
     - _Glossiness: 0.454
     - _Metallic: 0
     - _Mode: 0
-    - _OccluderDarkness: 0.415
+    - _OccluderDarkness: 0.626
     - _OcclusionStrength: 1
     - _Occulsion: 0.78
     - _Parallax: 0.02
     - _Roughness: 1
-    - _Sharpness: 0.709
+    - _Sharpness: 0.809
     - _Shine: 0.023
     - _Specularity: 0.21
     - _SrcBlend: 1
-    - _TrueTiling: 0.24
+    - _TrueTiling: 0.62
     - _UVSec: 0
     - _ZWrite: 1
     - _node_3978: 0
     - _node_7910: 0
     m_Colors:
-    - _Color: {r: 0.7352941, g: 0.7352941, b: 0.7352941, a: 1}
+    - _Color: {r: 0, g: 0, b: 0, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
   m_BuildTextureStacks: []

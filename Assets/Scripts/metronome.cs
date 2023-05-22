@@ -43,7 +43,10 @@ public class metronome : MonoBehaviour
     {
         bpm = bpmSlider.value * 4; // Set the initial BPM from the slider
         nextBeatTime = AudioSettings.dspTime; // Initialize the next beat time
-        bpmSlider.onValueChanged.AddListener(delegate { OnBpmChanged(); }); // Add a listener for the BPM slider value change
+        bpmSlider.onValueChanged.AddListener(delegate
+        {
+            OnBpmChanged();
+        }); // Add a listener for the BPM slider value change
     }
 
     void Update()
@@ -58,40 +61,47 @@ public class metronome : MonoBehaviour
 
     void PlayBeat()
     {
-        int currentNoteTemp;
+        float currentNoteTemp;
 
         currentNote++;
-        
+
+        // Check if the current note exceeds the maximum number of notes in the timeline
         if (currentNote > measuresSlider.value * 16)
         {
-            currentNote = 1;
+            currentNote = 1; // Reset the current note to the first note
         }
 
-        currentNoteText.text = (currentNote) + "/" + measuresSlider.value * 16; // Update the text to display the current note
-            
-        currentMeasure =  Mathf.FloorToInt(currentNote / 16) + 1; // Update the current measure
+        // Calculate the new value for currentNoteTemp based on currentNote
+        currentNoteTemp = ((currentNote - 1) % 16) + 1;
+        currentNoteTemp = Mathf.CeilToInt(currentNoteTemp / 4);
 
+        currentNoteText.text = "Current Note: " + currentNoteTemp + "/" + 4; // Update the text to display the current note
+
+        currentMeasure = Mathf.FloorToInt(currentNote / 16) + 1; // Update the current measure
+
+        // Check if the current measure exceeds the total number of measures
         if (currentMeasure > measuresSlider.value)
         {
-            currentMeasure = 1;
+            currentMeasure = 1; // Reset the current measure to the first measure
         }
-        
-        currentMeasureText.text = currentMeasure + "/" + measuresSlider.value; // Update the text to display the current measure
-        
+
+        currentMeasureText.text =
+            "Measure: " + currentMeasure + "/" + measuresSlider.value; // Update the text to display the current measure
+
         // Check if the currentNote is an even number since there are 8 notes per measure rather than 4
         if (currentNote % 16 == 0)
         {
-            audioSource.pitch = 4;
+            audioSource.pitch = 4; // Set the pitch of the audio source to 4
             audioSource.Play(); // Play the beat sound
         }
         else if (currentNote % 4 == 0)
         {
-            audioSource.pitch = 2;
+            audioSource.pitch = 2; // Set the pitch of the audio source to 2
             audioSource.Play(); // Play the beat sound
         }
     }
 
-    void OnBpmChanged()
+    public void OnBpmChanged()
     {
         bpm = bpmSlider.value * 4; // Update the BPM from the slider value
         nextBeatTime = AudioSettings.dspTime; // Reset the next beat time

@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Transactions;
 using UnityEngine;
+using UnityEngine.UI;
 
 /*
  * MusicButtons.cs is a script that allows objects to add sound to the timeline when interacted with.
@@ -12,6 +13,7 @@ using UnityEngine;
  * 2. Add necessary references and configure the public variables in the MusicButtons script:
  *    - Connect the metronome script by assigning the appropriate metronome instance to the _metronome variable.
  *    - Connect the AudioSource component to the audioSource variable.
+ *    - Connect the muteLogo component to the muteLogo variable.
  * 3. *OPTIONAL* Implement the OnButtonPressed method to define the behavior when the object is interacted with.
  *    - Scroll down in the inspector and find the On Click () section
  *    - Click the "+" button
@@ -28,6 +30,8 @@ public class MusicButtons : MonoBehaviour
     public bool[] notes = new bool[maxMeasures * 16]; // Array of bools representing notes
     public metronome _metronome; // Reference to the metronome script
     public AudioSource audioSource; // Reference to the AudioSource component
+    public bool muted = false;
+    public GameObject muteLogo;
 
     // Start is called before the first frame update
     void Start()
@@ -48,11 +52,28 @@ public class MusicButtons : MonoBehaviour
         notes[_metronome.currentNote - 1] = true; // Toggle the note to true at the currentNote
     }
 
+    public void toggleMute()
+    {
+        if (muted)
+        {
+            muted = false;
+            muteLogo.SetActive(false); // Turn muted logo off
+        }
+        else
+        {
+            muted = true;
+            muteLogo.SetActive(true); // Turn muted logo on
+        }
+    }
+
     public void playSound()
     {
-        if (notes[_metronome.currentNote - 1])
+        if (!muted)
         {
-            audioSource.Play(); // Play the sound if the note is set to true
+            if (notes[_metronome.currentNote - 1])
+            {
+                audioSource.Play(); // Play the sound if the note is set to true
+            }
         }
     }
 }

@@ -92,9 +92,9 @@ Material:
     - _Parallax: 0.02
     - _Sharpness: 0.652
     - _Shine: 0.023
-    - _Specularity: 2.2
+    - _Specularity: 0.19
     - _SrcBlend: 1
-    - _TrueTiling: 0.5
+    - _TrueTiling: 1.38
     - _UVSec: 0
     - _ZWrite: 1
     - _node_3978: 0

@@ -95,7 +95,7 @@ Material:
     - _Shine: 0.023
     - _Specularity: 0.012
     - _SrcBlend: 1
-    - _TrueTiling: 0.2
+    - _TrueTiling: 1.06
     - _UVSec: 0
     - _ZWrite: 1
     - _node_3978: 0

@@ -14,7 +14,7 @@ Material:
   m_LightmapFlags: 5
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
-  m_CustomRenderQueue: 2000
+  m_CustomRenderQueue: -1
   stringTagMap: {}
   disabledShaderPasses: []
   m_SavedProperties:
@@ -83,7 +83,7 @@ Material:
     m_Ints: []
     m_Floats:
     - _BumpScale: 1
-    - _Bumpiness: 0.045
+    - _Bumpiness: 0
     - _Cutoff: 0.5
     - _DetailNormalMapScale: 1
     - _DstBlend: 0
@@ -92,17 +92,17 @@ Material:
     - _Metallic: 0
     - _Mode: 0
     - _OcclusionStrength: 1
-    - _Occulsion: 0.705
+    - _Occulsion: 0
     - _Parallax: 0.02
-    - _Sharpness: 1.18
-    - _Shine: 0.924
+    - _Sharpness: 3
+    - _Shine: 0.56
     - _SrcBlend: 1
-    - _TrueTiling: 1
+    - _TrueTiling: 3.86
     - _UVSec: 0
     - _ZWrite: 1
     - _node_3978: 0
     - _node_7910: 0
     m_Colors:
-    - _Color: {r: 0.5147059, g: 0.5147059, b: 0.5147059, a: 1}
+    - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
   m_BuildTextureStacks: []
