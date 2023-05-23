@@ -46,10 +46,13 @@ public class MusicButtons : MonoBehaviour
     {
         notes[_metronome.currentNote - 1] = true; // Toggle the note to true at the currentNote
     }
-
+    
     public void OnTriggerEnter(Collider other)
     {
-        notes[_metronome.currentNote - 1] = true; // Toggle the note to true at the currentNote
+        if (other.CompareTag("DrumStick"))
+        {
+            notes[_metronome.currentNote - 1] = true; // Toggle the note to true at the currentNote
+        }
     }
 
     public void toggleMute()

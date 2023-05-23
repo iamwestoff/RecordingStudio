@@ -30,11 +30,7 @@ public class metronome : MonoBehaviour
     public Slider bpmSlider; // Slider to control the BPM
     public Slider measuresSlider; // Slider to control the number of measures
     public AudioSource audioSource; // Reference to the AudioSource component
-    public TMP_Text currentNoteText; // Reference to the TMP_Text component to display the current note
-    public TMP_Text currentMeasureText; // Reference to the TMP_Text component to display the current measure
     public int currentNote = 1; // The current note being played
-    public int currentMeasure = 1; // The current measure being played
-    private int measures = 1; // The total number of measures
     public MusicButtons[] instruments; // Array of MusicButtons objects
 
     private double nextBeatTime; // The time when the next beat should be played
@@ -61,8 +57,6 @@ public class metronome : MonoBehaviour
 
     void PlayBeat()
     {
-        float currentNoteTemp;
-
         currentNote++;
 
         // Check if the current note exceeds the maximum number of notes in the timeline
@@ -71,32 +65,15 @@ public class metronome : MonoBehaviour
             currentNote = 1; // Reset the current note to the first note
         }
 
-        // Calculate the new value for currentNoteTemp based on currentNote
-        currentNoteTemp = ((currentNote - 1) % 16) + 1;
-        currentNoteTemp = Mathf.CeilToInt(currentNoteTemp / 4);
-
-        currentNoteText.text = "Current Note: " + currentNoteTemp + "/" + 4; // Update the text to display the current note
-
-        currentMeasure = Mathf.FloorToInt(currentNote / 16) + 1; // Update the current measure
-
-        // Check if the current measure exceeds the total number of measures
-        if (currentMeasure > measuresSlider.value)
-        {
-            currentMeasure = 1; // Reset the current measure to the first measure
-        }
-
-        currentMeasureText.text =
-            "Measure: " + currentMeasure + "/" + measuresSlider.value; // Update the text to display the current measure
-
         // Check if the currentNote is an even number since there are 8 notes per measure rather than 4
         if (currentNote % 16 == 0)
         {
-            audioSource.pitch = 4; // Set the pitch of the audio source to 4
+            audioSource.pitch = 1; // Set the pitch of the audio source to 4
             audioSource.Play(); // Play the beat sound
         }
         else if (currentNote % 4 == 0)
         {
-            audioSource.pitch = 2; // Set the pitch of the audio source to 2
+            audioSource.pitch = 0.5f; // Set the pitch of the audio source to 2
             audioSource.Play(); // Play the beat sound
         }
     }
@@ -113,5 +90,11 @@ public class metronome : MonoBehaviour
         {
             instruments[i].playSound();
         }
+    }
+
+    void Stop()
+    {
+        nextBeatTime = 0;
+        
     }
 }

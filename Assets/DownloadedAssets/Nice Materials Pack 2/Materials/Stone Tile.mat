@@ -46,7 +46,7 @@ Material:
         m_Offset: {x: 0, y: 0}
     - _HeightMap:
         m_Texture: {fileID: 2800000, guid: 825463b3298ac46bd9e47ecb2cda20f0, type: 3}
-        m_Scale: {x: 4, y: 2}
+        m_Scale: {x: 0, y: 0}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
         m_Texture: {fileID: 2800000, guid: 477b0e8758ebc4d54995927ed9e853e6, type: 3}
@@ -70,7 +70,7 @@ Material:
         m_Offset: {x: 0, y: 0}
     - _SpecularMap:
         m_Texture: {fileID: 2800000, guid: 39f861e0764bc4fac8b78e38f855aee0, type: 3}
-        m_Scale: {x: 4, y: 2}
+        m_Scale: {x: 100, y: 100}
         m_Offset: {x: 0, y: 0}
     - _node_3846:
         m_Texture: {fileID: 2800000, guid: 3a5a96df060a5cf4a9cc0c59e13486b7, type: 3}
@@ -87,14 +87,14 @@ Material:
     - _Glossiness: 0.454
     - _Metallic: 0
     - _Mode: 0
-    - _OccluderDarkness: 0.626
+    - _OccluderDarkness: 0.514
     - _OcclusionStrength: 1
     - _Occulsion: 0.78
     - _Parallax: 0.02
     - _Roughness: 1
-    - _Sharpness: 0.809
+    - _Sharpness: 1
     - _Shine: 0.023
-    - _Specularity: 0.21
+    - _Specularity: 0.5
     - _SrcBlend: 1
     - _TrueTiling: 0.62
     - _UVSec: 0

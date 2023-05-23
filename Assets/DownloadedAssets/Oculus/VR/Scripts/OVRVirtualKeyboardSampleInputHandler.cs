@@ -60,7 +60,7 @@ public class OVRVirtualKeyboardSampleInputHandler : MonoBehaviour
 
     private Transform InputTransform;
 
-    public OVRVirtualKeyboard OVRVirtualKeyboard;
+    //public OVRVirtualKeyboard OVRVirtualKeyboard;
 
     [SerializeField]
     private OVRHand leftHand;
@@ -92,7 +92,8 @@ public class OVRVirtualKeyboardSampleInputHandler : MonoBehaviour
     {
         leftLinePointer.enabled = false;
         rightLinePointer.enabled = false;
-
+        
+        /*
         foreach (var inputHandler in OVRVirtualKeyboard.InputHandlers)
         {
             if (!inputHandler.PositionValid)
@@ -132,12 +133,13 @@ public class OVRVirtualKeyboardSampleInputHandler : MonoBehaviour
                     inputHandler.InputPosePosition + ray.direction * 2.5f);
             }
         }
+        */
     }
 
     private void UpdateInteractionAnchor()
     {
         // Determine currently active device
-
+        /*
         foreach (var inputHandler in OVRVirtualKeyboard.InputHandlers)
         {
             if (inputHandler.PositionValid)
@@ -151,7 +153,7 @@ public class OVRVirtualKeyboardSampleInputHandler : MonoBehaviour
             {
                 interactionDevice_ = null;
             }
-        }
+        }*/
 
         // Set transforms for Unity UI interaction
 

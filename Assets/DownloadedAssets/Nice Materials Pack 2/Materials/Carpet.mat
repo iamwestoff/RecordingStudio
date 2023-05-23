@@ -70,7 +70,7 @@ Material:
         m_Offset: {x: 0, y: 0}
     - _SpecularMap:
         m_Texture: {fileID: 2800000, guid: 69486f7c976f44cdaa9d7a8c0696c698, type: 3}
-        m_Scale: {x: 4, y: 3}
+        m_Scale: {x: 10, y: 10}
         m_Offset: {x: 0, y: 0}
     - _node_3846:
         m_Texture: {fileID: 2800000, guid: 3a5a96df060a5cf4a9cc0c59e13486b7, type: 3}
@@ -92,9 +92,9 @@ Material:
     - _Occulsion: 0.78
     - _Parallax: 0.02
     - _Roughness: 0.985
-    - _Sharpness: 1
+    - _Sharpness: 0.456
     - _Shine: 0.023
-    - _Specularity: 0.81
+    - _Specularity: 0.32
     - _SrcBlend: 1
     - _TrueTiling: 0.87
     - _UVSec: 0
